@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Ela Bingo</title>
+    <meta name="description" content="Offline-first PC Bingo Management System with fixed physical printed card verification, caller board, agent credit ledger, and idempotent sync." />
+    <meta name="theme-color" content="#059669" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ela Bingo" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta property="og:title" content="Ela Bingo" />
+    <meta property="og:description" content="Offline-first PC Bingo Management System with fixed physical printed card verification, caller board, agent credit ledger, and idempotent sync." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Filter benign Vite development notices in sandbox iframe
+      (function() {
+        const _origErr = console.error;
+        console.error = function(...args) {
+          if (args && args[0] && typeof args[0] === 'string' && (args[0].includes('[vite]') || args[0].includes('websocket') || args[0].includes('WebSocket'))) {
+            return;
+          }
+          _origErr.apply(console, args);
+        };
+        const _origWarn = console.warn;
+        console.warn = function(...args) {
+          if (args && args[0] && typeof args[0] === 'string' && (args[0].includes('[vite]') || args[0].includes('websocket') || args[0].includes('WebSocket'))) {
+            return;
+          }
+          _origWarn.apply(console, args);
+        };
+      })();
+
+      // Global safeguard against polyfills or libraries trying to set window.fetch in environments with getter-only fetch
+      (function() {
+        try {
+          const _nativeFetch = window.fetch ? window.fetch.bind(window) : null;
+          let _currentFetch = _nativeFetch;
+          Object.defineProperty(window, 'fetch', {
+            get() {
+              return _currentFetch || _nativeFetch;
+            },
+            set(newFetch) {
+              _currentFetch = typeof newFetch === 'function' ? newFetch : _nativeFetch;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          // Ignore if cannot be overridden
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-900 text-slate-100 antialiased font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
